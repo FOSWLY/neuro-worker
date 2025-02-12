@@ -24,6 +24,10 @@ pub async fn post_sharing_url(headers: HeaderMap, body: String) -> impl IntoResp
     request("/api/sharing-url", headers, body).await
 }
 
+pub async fn post_sharing(headers: HeaderMap, body: String) -> impl IntoResponse {
+    request("/api/sharing", headers, body).await
+}
+
 pub async fn post_neuro_generation(headers: HeaderMap, body: String) -> impl IntoResponse {
     request("/api/neuro/generation", headers, body).await
 }

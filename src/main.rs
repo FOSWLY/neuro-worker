@@ -17,6 +17,7 @@ use crate::data::config::CONFIG;
 async fn main() {
     let th_api_routes = Router::new()
         .route("/sharing-url", post(routes::thapi::post_sharing_url))
+        .route("/sharing", post(routes::thapi::post_sharing))
         .route(
             "/neuro/generation",
             post(routes::thapi::post_neuro_generation),
