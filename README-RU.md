@@ -32,6 +32,10 @@ Neuro Worker поддерживает работу с:
 
   `POST /th/api/generation`
 
+  Получение существующей суммаризации по токену из ссылки (С YaHmac или Cookies)
+
+  `POST /th/sharing`
+
 - Самопроверка. Проверьте, работает ли сервис
 
   `GET /health`

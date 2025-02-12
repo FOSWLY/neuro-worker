@@ -32,6 +32,10 @@ This worker supports:
 
   `POST /th/api/generation`
 
+  Get exists summarization by token from url (With YaHmac or Cookies)
+
+  `POST /th/sharing`
+
 - Self health. Check if it's working
 
   `GET /health`
