@@ -49,6 +49,14 @@ To run your own instance:
 
 1. Install [Rust 1.75+](https://www.rust-lang.org/learn/get-started)
 
+   1.1. For linux also install:
+
+```bash
+# ubuntu / debian
+sudo apt install build-essential
+sudo apt install pkg-config
+```
+
 2. (Optional) Run for developing:
 
    2.1. Install `cargo watch`:

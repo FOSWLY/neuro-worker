@@ -49,7 +49,15 @@ Neuro Worker поддерживает работу с:
 
 1. Установите [Rust 1.75+](https://www.rust-lang.org/learn/get-started)
 
-2. (Опционально) Запуск для разработки:
+   1.1. Для linux также установите:
+
+```bash
+# ubuntu / debian
+sudo apt install build-essential
+sudo apt install pkg-config
+```
+
+1. (Опционально) Запуск для разработки:
 
    2.1. Установите `cargo watch`:
 
@@ -63,7 +71,7 @@ Neuro Worker поддерживает работу с:
    cargo watch -x run
    ```
 
-3. Запуск для Production:
+2. Запуск для Production:
 
    3.1. Соберите:
 
