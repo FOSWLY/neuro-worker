@@ -1,6 +1,6 @@
 [package]
 name = "neuro-worker"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2021"
 
 [dependencies]
@@ -12,3 +12,4 @@ lazy_static = "1.5.0"
 reqwest = { version = "0.12.12", features = ["json"] }
 toml = "0.8.20"
 tower-http = { version = "0.6.2", features = ["cors"] }
+dotenv = "0.15.0"

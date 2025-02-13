@@ -1,5 +1,6 @@
 use lazy_static::lazy_static;
 use serde::Deserialize;
+use std::env;
 
 #[derive(Deserialize)]
 pub struct CargoConfig {
@@ -22,7 +23,13 @@ lazy_static! {
         toml::from_str(include_str!("../../Cargo.toml")).unwrap();
     pub static ref CONFIG: Config = Config {
         version: CARGO_CONFIG.package.version.clone(),
-        hostname: "127.0.0.1".to_string(),
-        port: 7674
+        hostname: match env::var("SERVICE_HOST") {
+            Ok(host) => host,
+            Err(_) => "127.0.0.1".to_string(),
+        },
+        port: match env::var("SERVICE_PORT") {
+            Ok(port) => port.parse().unwrap(),
+            Err(_) => 7674,
+        }
     };
 }

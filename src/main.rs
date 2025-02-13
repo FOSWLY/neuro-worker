@@ -8,6 +8,7 @@ use axum::{
     routing::{get, post},
     Router,
 };
+use dotenv::dotenv;
 use std::time::Duration;
 use tower_http::cors::{Any, CorsLayer};
 
@@ -15,6 +16,8 @@ use crate::data::config::CONFIG;
 
 #[tokio::main]
 async fn main() {
+    dotenv().ok();
+
     let th_api_routes = Router::new()
         .route("/sharing-url", post(routes::thapi::post_sharing_url))
         .route("/sharing", post(routes::thapi::post_sharing))
