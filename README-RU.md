@@ -51,17 +51,33 @@ Neuro Worker поддерживает работу с:
 
 Чтобы запустить свой инстанс:
 
+### С Docker
+
+1. Установите Docker
+2. Соберите образ
+
+```bash
+docker build -t "neuro-worker" .
+```
+
+3. Запустите контейнер
+
+```bash
+docker run -p 7674:7674 neuro-worker
+```
+
+### Ручная сборка и запуск
+
 1. Установите [Rust 1.75+](https://www.rust-lang.org/learn/get-started)
 
    1.1. Для linux также установите:
 
 ```bash
 # ubuntu / debian
-sudo apt install build-essential
-sudo apt install pkg-config
+sudo apt install build-essential pkg-config
 ```
 
-1. (Опционально) Запуск для разработки:
+2. (Опционально) Запуск для разработки:
 
    2.1. Установите `cargo watch`:
 
@@ -75,7 +91,7 @@ sudo apt install pkg-config
    cargo watch -x run
    ```
 
-2. Запуск для Production:
+3. Запуск для Production:
 
    3.1. Соберите:
 

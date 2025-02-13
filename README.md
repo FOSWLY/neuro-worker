@@ -51,14 +51,30 @@ Worker is needed if:
 
 To run your own instance:
 
+### With Docker
+
+1. Install [Docker](https://www.docker.com/)
+2. Build the image
+
+```bash
+docker build -t "neuro-worker" .
+```
+
+3. Run container
+
+```bash
+docker run -p 7674:7674 neuro-worker
+```
+
+### Manually
+
 1. Install [Rust 1.75+](https://www.rust-lang.org/learn/get-started)
 
    1.1. For linux also install:
 
 ```bash
 # ubuntu / debian
-sudo apt install build-essential
-sudo apt install pkg-config
+sudo apt install build-essential pkg-config
 ```
 
 2. (Optional) Run for developing:
