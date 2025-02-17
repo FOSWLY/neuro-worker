@@ -2,8 +2,13 @@ use axum::{
     body::Body,
     http::{HeaderMap, HeaderName, HeaderValue, Response},
 };
-use reqwest::Error;
+use lazy_static::lazy_static;
+use reqwest::{Client, Error};
 use serde_json::Map;
+
+lazy_static! {
+    static ref REQ_CLIENT: Client = reqwest::Client::new();
+}
 
 pub async fn request(
     pathname: &str,
@@ -24,7 +29,7 @@ pub async fn request(
         }
     }
 
-    let res = reqwest::Client::new()
+    let res = REQ_CLIENT
         .post(&request_url)
         .headers(headers)
         .json(body)
